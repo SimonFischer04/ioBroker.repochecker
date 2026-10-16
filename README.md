@@ -26,6 +26,9 @@ Example:
 
 `npx @iobroker/repochecker https://github.com/ioBroker/ioBroker.repochecker --local`
 
+To check an adapter which does not (yet) exist at GitHub, pass the `--offline` parameter. It works like `--local`, but the GitHub repository is not accessed at all.
+Checks requiring GitHub data (repository settings, releases, issues, workflow runs) are skipped.
+
 ## Using a GitHub token
 
 Unauthenticated requests to the GitHub API are rate limited. To raise the limit you can provide a
@@ -56,6 +59,10 @@ GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (SimonFischer04) Added `--offline` command line option: like `--local`, but the GitHub repository is not accessed, so adapters which do not (yet) exist at GitHub can be checked. GitHub repository checks are skipped.
+* (SimonFischer04) Added workflow checking an adapter created by create-adapter (maximum set of options) using `--offline` mode, findings are posted as comment to the pull request
+
 ### 5.22.15 (2026-10-12)
 * (mcm1957) src-blockly added to source directories excluded from E9507 / E9506 (missing i18n files) check
 
